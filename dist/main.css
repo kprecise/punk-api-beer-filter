@@ -1,0 +1,20 @@
+ul#searchFilter li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  ul#searchFilter li input {
+    margin-top: 6px; }
+  ul#searchFilter li label {
+    padding-left: 6px; }
+
+@media only screen and (max-width: 767px) {
+  ul#searchFilter li label, ul#searchFilter li input {
+    float: left;
+    padding-right: 12px; } }
+
+.container h1 {
+  margin-bottom: 20px; }
+
+.container .slick-container {
+  min-height: 400px; }
+

@@ -1,0 +1,34 @@
+
+// Search Filter 
+#searchFilter {
+    h2 {
+        font-size: 1.5rem;
+    }
+    ul {
+        margin: 0;
+        padding: 12px;
+        li {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            input {
+                margin-top: 6px;
+            }
+            label {
+                padding-left: 6px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width : 767px) {
+    ul#searchFilter {
+        li {
+            label, input {
+                float: left;
+                padding-right: 12px;
+            }
+        }
+    }
+}
