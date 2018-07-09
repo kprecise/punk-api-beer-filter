@@ -1,5 +1,5 @@
 # LCBO Beer Filter
-A search results filter application written using React JS, Reactstrap, HTML, CSS, Fonts with Webpack 4. The data being populated from LCBO's API.
+A search results filter application written using React JS, Reactstrap, HTML, SASS, Fonts with Webpack 4. The data being populated from LCBO's API.
 
 ## Components
 
