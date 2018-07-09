@@ -22,7 +22,6 @@ class Layout extends Component {
         axios.get('https://lcboapi.com/products?access_key=MDpmYTg5MmJiOC04MTQ1LTExZTgtODQ5My1jM2E3MzhjZTJmM2I6Rk56N1NJOTBjQXgwTUIyeTNuVXYzMGNuOWV5dnVZSm5JcVdZ')
         .then(response => {
             this.setState({productList: response.data.result});
-            console.log(response.data.result)
             return response;
         })
         .catch (response => {
