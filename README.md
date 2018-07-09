@@ -10,7 +10,7 @@ The product component loops through the data in the LCBO API and gets the produc
 The Search Filter consists of two radio buttons that can be selected to filter products by name (ascending order) or by price (highest first). Name is selected by default.
 
 ## Fonts
-A font (Galada) is imported into the project via the head of the index.htmnl file. To avoid performance issues when running your site on Google Page Speed, Web Font Loader is used.
+A font (Galada) is imported into the project via the head of the index.htmnl file. To avoid performance issues when running your site on Google Page Speed (Render Blocking CSS), Web Font Loader is used.
 
 ## Quick Start
 
