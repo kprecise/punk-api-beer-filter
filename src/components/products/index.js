@@ -2,21 +2,20 @@ import React, { Component } from "react";
 import "./index.scss";
 
 class Products extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        const {product} = this.props;
-        const convertedPrice = (product.price_in_cents/100).toFixed(2);
+        const { product } = this.props;
         return (      
             <div className="products">
-                {product.has_limited_time_offer ? (
-                    <div className="limited">Limited Offer</div>
-                ) : (
-                    <div></div>
-                )}
-                <img src={product.image_url} />
-                    <h2>{product.name}</h2>
-                    <p>Price: ${convertedPrice} (for {product.total_package_units})</p>
-                    <p>Category: {product.tertiary_category}</p>
-                    <p>Serving Suggestion: {product.serving_suggestion}</p>
+                <div className="image">
+                    <img src={product.image_url} />
+                </div>
+                <h2>{product.name}</h2>
+                <p>Tagline: {product.tagline}</p>
+                <p>First Brewed: {product.first_brewed}</p>
             </div>
         );
     }

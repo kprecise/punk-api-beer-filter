@@ -1,13 +1,13 @@
-# LCBO Beer Filter
-A search results filter application written using React JS, Reactstrap, HTML, SASS, Fonts with Webpack 4. The data being populated from LCBO's API.
+# Punk Beer API Filter
+A search results filter application written using React JS, Reactstrap, HTML, SASS, Fonts with Webpack 4. The data is being populated from the Punk API https://punkapi.com/documentation/v2.
 
 ## Components
 
 ### Products
-The product component loops through the data in the LCBO API and gets the product name, the image, the price, the package units, the category and the serving suggestion. The price is converted from cents to a 2 decimal dollar amount. A limited offer message is displayed only to products that have a limited time offer.
+The product component loops through the data in the Punk API and gets the product name, the `image`, `tagline`, and `first brewed` data. 
 
 ### Search Filter
-The Search Filter consists of two radio buttons that can be selected to filter products by name (ascending order) or by price (highest first). Name is selected by default.
+The Search Filter consists of three radio buttons. `Unordered` is the default selection which lists by `tagline.` `Name` lists all products by name (ascending order) and `Keg` will list all items available on the keg.
 
 ## Fonts
 A font (Galada) is imported into the project via the head of the index.htmnl file. To avoid performance issues when running your site on Google Page Speed (Render Blocking CSS), Web Font Loader is used.

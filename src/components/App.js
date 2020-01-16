@@ -9,40 +9,49 @@ class Layout extends Component {
         super(props);
         this.state = {
             productList: [],
-            sortBy: 'name'
+            sortBy: 'unordered'
         }
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount() {
+        axios.get('https://api.punkapi.com/v2/beers')
+        .then(response => {
+            this.setState({productList: response.data});
+            return response;
+        })
+        .catch (response => {
+            console.log('error fetching data', response)
+        }) 
     }
 
     handleChange(e) {
         this.setState({sortBy: e.target.value});
     } 
 
-    componentDidMount() {
-        axios.get('https://lcboapi.com/products?access_key=MDpmYTg5MmJiOC04MTQ1LTExZTgtODQ5My1jM2E3MzhjZTJmM2I6Rk56N1NJOTBjQXgwTUIyeTNuVXYzMGNuOWV5dnVZSm5JcVdZ')
-        .then(response => {
-            this.setState({productList: response.data.result});
-            return response;
-        })
-        .catch (response => {
-
-        }) 
-    }
-
     render() {
-        const sortedProducts = this.state.productList.sort((a, b) => {
-            if (this.state.sortBy === "name") {
-                const textA = a.name.toUpperCase();
-                const textB = b.name.toUpperCase();
+        let sortedProducts = '';
+        if (this.state.sortBy === "name") {
+            sortedProducts = this.state.productList.sort((a, b) => {
+                const textA = a.name;
+                const textB = b.name;
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-            } else {
-                return b.price_in_cents - a.price_in_cents;
-            }
-        });
+            });
+        } else if (this.state.sortBy === "keg") {
+            sortedProducts = this.state.productList.filter(item => item.image_url !== 'https://images.punkapi.com/v2/keg.png')
+        } else {
+            sortedProducts = this.state.productList.sort((a, b) => {
+                return a.id - b.id
+            });
+        }
+
         return (     
             <Container>
                 <Row>
-                    <Col xs="12"><h1>LCBO Beer Filter</h1></Col>
+                    <Col xs="12">
+                        <h1>Punk Beer Filter</h1>
+                        <hr />
+                    </Col>
                 </Row>
                 <Row>
                     <Col xs="12" sm="2">
@@ -52,7 +61,7 @@ class Layout extends Component {
                         <Row>
                         {sortedProducts.map(x => {
                             return (
-                                <Col xs="12" sm="4" key={x.id}>
+                                <Col xs="12" sm="3" key={x.id}>
                                     <Products product={x} />
                                 </Col> 
                             );
