@@ -2,7 +2,8 @@ import React from "react";
 import "./index.scss";
 
 const SearchFilter  = ({
-    onChange, selectedItem
+    onChange, 
+    selectedItem
 }) => {
 
     return (

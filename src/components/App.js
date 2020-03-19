@@ -24,7 +24,7 @@ const App = () => {
             setProductList(sortedProductList)
         } else if (event.target.value === "keg") {
             sortedProductList = dataList.filter(item => item.image_url !== 'https://images.punkapi.com/v2/keg.png');
-            setProductList(sortedProductList)
+            setProductList(sortedProductList);
         } else {
             sortedProductList = dataList.sort((a, b) => {
                 return a.id - b.id;
@@ -41,7 +41,7 @@ const App = () => {
             setDataReady(true);
         })
         .catch (response => {
-            console.log('error fetching data', response)
+            console.log('error fetching data', response);
         })         
     }, []);
 
@@ -49,13 +49,16 @@ const App = () => {
         <Container>
             <Row>
                 <Col xs="12">
-                    <h1>Punk Beer Filter</h1>
+                    <h1>Punk Beer</h1>
                     <hr />
                 </Col>
             </Row>
             <Row>
                 <Col xs="12" sm="2">
-                    <SearchFilter onChange={event => handleChange()} selectedItem={sortProductBy} />
+                    <SearchFilter 
+                        onChange={event => handleChange()} 
+                        selectedItem={sortProductBy}
+                    />
                  </Col> 
                 <Col className="product-container" xs="12" sm="10">
                     <Row>
