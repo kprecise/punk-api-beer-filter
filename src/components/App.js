@@ -49,7 +49,10 @@ const App = () => {
         <Container>
             <Row>
                 <Col xs="12">
-                    <h1>Punk Beer</h1>
+                    <h1>
+                        <span>Punk Beer</span>
+                        <img className="logo" src="http://cheekyiguana.com/punkbeer/images/beer.jpg" />   
+                    </h1>
                     <hr />
                 </Col>
             </Row>

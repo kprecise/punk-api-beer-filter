@@ -1,17 +1,17 @@
 .products {
-    position: relative;
-    margin-bottom: 12px;
     width: 100%;
-    padding: 7px;
-    background: #fff;
     margin-bottom: 1.5em;
-    font-size: 16px;
+    font-size: 1rem;
+    border: 1px #f2e7d0 solid;
+    background: #fcfaf4;
+    padding: 0 1rem 0;
+    min-height: 442px;
     .image {
-        min-height: 200px;
+        min-height: 258px;
         img {
-            width: 25%;
+            width: 35%;
             display: block;
-            margin: 0 auto 12px;
+            margin: 25% auto;
         }
     }
     h2 {
